@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Aray Jadhav</title>
+    <style>
+        /* Force dark theme colors */
+        body {
+            background-color: rgb(18, 18, 18) !important;
+            color: rgb(240, 240, 240) !important;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-container {
+            background-color: rgba(18, 18, 18, 0.8);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(224, 241, 31, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .contact-title {
+            color: rgb(224, 241, 31);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgb(240, 240, 240);
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid rgba(224, 241, 31, 0.3);
+            border-radius: 8px;
+            background-color: rgba(18, 18, 18, 0.8);
+            color: rgb(240, 240, 240);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: rgb(224, 241, 31);
+            box-shadow: 0 0 0 3px rgba(224, 241, 31, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: rgb(224, 241, 31);
+            color: rgb(18, 18, 18);
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: rgb(200, 217, 20);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(224, 241, 31, 0.3);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(240, 240, 240, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: rgb(224, 241, 31);
+        }
+
+        .success-message {
+            text-align: center;
+            color: rgb(240, 240, 240);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: rgb(224, 241, 31);
+            margin-bottom: 20px;
+        }
+
+        .success-title {
+            font-size: 2rem;
+            color: rgb(224, 241, 31);
+            margin-bottom: 15px;
+        }
+
+        .success-text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: rgb(224, 241, 31);
+            color: rgb(18, 18, 18);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: rgb(200, 217, 20);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: rgb(240, 240, 240);
+            border: 2px solid rgba(240, 240, 240, 0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: rgb(224, 241, 31);
+            color: rgb(224, 241, 31);
+        }
+
+        @media (max-width: 600px) {
+            .contact-container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+            
+            .contact-title {
+                font-size: 2rem;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <div id="contact-form">
+            <h1 class="contact-title">Get In Touch</h1>
+            <form action="https://formspree.io/f/xpwrjwyj" method="POST" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell me about your project or inquiry..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+        </div>
+        
+        <div id="success-message" class="success-message" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h2 class="success-title">Message Sent!</h2>
+            <p class="success-text">Thank you for reaching out! I'll get back to you as soon as possible.</p>
+            
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="resetForm()">Send Another Query</button>
+                <a href="index.html" class="btn btn-secondary">Back to Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            fetch('https://formspree.io/f/xpwrjwyj', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    document.getElementById('contact-form').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+                } else {
+                    throw new Error('Something went wrong');
+                }
+            })
+            .catch(error => {
+                alert('There was an error sending your message. Please try again.');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        function resetForm() {
+            document.getElementById('contactForm').reset();
+            document.getElementById('success-message').style.display = 'none';
+            document.getElementById('contact-form').style.display = 'block';
+        }
+    </script>
+</body>
+</html> 
